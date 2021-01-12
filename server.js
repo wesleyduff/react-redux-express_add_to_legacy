@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
 const path = require('path');
 
@@ -12,8 +13,9 @@ var expressAppRoutes = require('./routes/expressAppRoutes');
 var reactAppRoutes = require('./routes/reactRoutes');
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.use(expressLayouts)
+app.set('layout', './global/layout')
+app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -26,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 
 app.use('/', expressAppRoutes);
-app.use('/react-apps', reactAppRoutes);
+app.use('/react-app', reactAppRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
