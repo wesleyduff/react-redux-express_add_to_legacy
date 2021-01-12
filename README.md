@@ -25,3 +25,7 @@ The react app will make THUNK calls to a microservice API endpoint : This can be
 | create express routes in routes folder | ready |
 | create three react apps /w redux using create-react-app and eject : (1) is already made (todo app - on react-app branch) | ready |
 | verify each react app loads with its own redux state and separate from the others | ready |
+
+| CHANGES |
+|---- |
+| after eject of create react app : go to /config/webpack.config.js : next find "HtmlWebpackPlugin" under plugins and *filename: "<name>.html"* so that we do not use index.html 
