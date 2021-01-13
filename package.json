@@ -21,6 +21,6 @@
     "jest": "^22.4.3",
     "morgan": "~1.9.1",
     "regenerator-runtime": "^0.11.1",
-    "todo": "git+https://github.com/wesleyduff/todo_redux-react-app_npm_module.git"
+    "todo": "git+https://github.com/wesleyduff/todo_redux-react-app_npm_module.git#master"
   }
 }
